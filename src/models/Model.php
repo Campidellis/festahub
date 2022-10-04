@@ -37,21 +37,21 @@ class Model {
 
     }
 
-    /* ================== PAROU DE PROGRAMAR AQUI ============================= */
+    /**
+     * Método responsável por retornar o tipo do objeto
+     * @param Array $filtros
+     * @param String $colunas
+     * @return Array
+     */
     public static function getClasse($filtros = [], $colunas = "*") {
-        
+
         $objeto = [];
         $result = static::getSelect($filtros, $colunas);
-        echo '<pre>';
-        print_r(count($result));
-        echo '</pre>';
-        exit();
+
         if(count($result) > 0) {
             $class = get_called_class();
 
-            for ($i=0; $i < count($result) ; $i++) { 
-                array_push($objeto, new $class($result));                
-            }
+            array_push($objeto, new $class($result));
 
         }
 

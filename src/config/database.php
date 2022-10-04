@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Conexão com o banco de dados
+ */
 class Database {
 
     public static function getConnection() {
@@ -27,7 +30,7 @@ class Database {
 
     /**
      * Método resposável por retornar o resultado de uma query
-     * @param String
+     * @param String $sql
      * @return PDOStatement
     */
     public static function getResultadoDaQuery($sql) {
