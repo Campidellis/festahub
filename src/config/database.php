@@ -3,6 +3,7 @@
 /**
  * Conexão com o banco de dados
  */
+
 class Database {
 
     public static function getConnection() {

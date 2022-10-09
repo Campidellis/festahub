@@ -38,6 +38,25 @@ class Model {
     }
 
     /**
+     * Método responsável por retornar um único registro do banco de dados
+     * Estamos usando esse método para login especificamente
+     * 
+     * Se tiver retorno, cria o objeto senão retorna nulo
+     * 
+     * @param Array $filtros
+     * @param String $colunas
+     * @return Object $result
+     * 
+     */
+    public static function getUnicoRegistro($filtros = [], $colunas = "*") {
+
+        $class = get_called_class();    
+        $result = static::getSelect($filtros, $colunas);
+
+        return $result ? new $class($result) : null;
+    }
+
+    /**
      * Método responsável por retornar o tipo do objeto
      * @param Array $filtros
      * @param String $colunas
