@@ -48,10 +48,10 @@ class Model {
      * @return Object $result
      * 
      */
-    public static function getUnicoRegistro($filtros = [], $colunas = "*") {
+    public static function getUnicoRegistro($filtros = [], $colunas = "*",  $filtrosJoin = [], $colunaJoin = null) {
 
         $class = get_called_class();    
-        $result = static::getSelect($filtros, $colunas);
+        $result = static::getSelect($filtros, $colunas, $filtrosJoin, $colunaJoin);
 
         return $result ? new $class($result) : null;
     }
@@ -84,9 +84,10 @@ class Model {
      * @param String $colunas
      * @return Array
      */
-    public static function getSelect($filtros = [], $colunas = '*') {
+    public static function getSelect($filtros = [], $colunas = '*', $filtrosJoin = [], $colunaJoin = null) {
 
-        $sql = "SELECT $colunas FROM " . static::$nomeTabela . static::getFiltros($filtros);
+        $sql = "SELECT $colunas FROM " . static::$nomeTabela  . static::getJoin($colunaJoin, $filtrosJoin) . static::getFiltros($filtros);
+        
         $result = Database::getResultadoDaQuery($sql);
         
         if($result->rowCount() > 0) {
@@ -95,6 +96,21 @@ class Model {
             return null;
         }
 
+    }
+
+    
+    public static function getJoin($coluna = null, $filtrosJoin = []) {
+
+        $sql = '';
+        if(!empty($coluna)) {
+            $sql .= " JOIN $coluna ";
+            
+            foreach ($filtrosJoin as $colunaJoin => $valorJoin) {
+                $sql .= "ON $colunaJoin.$valorJoin = ".static::$nomeTabela."."."$valorJoin";
+            }
+        }
+
+        return $sql;
     }
 
     /**

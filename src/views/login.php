@@ -9,12 +9,13 @@
 </head>
 <body>
     <div id="login-container">
+        <?php include(VIEW_PATH . '/template/erros.php') ?>
         <h1>FestaHub</h1>
-        <form action="">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="off">
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite a sua senha">
+        <form action="#" method="POST">
+            <label for="apartamento">Apartamento</label>
+            <input type="text" name="apartamento" id="apartamento" placeholder="Digite seu apartamento" autocomplete="off" value="<?= $apartamento ?? null ?>">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" placeholder="Digite a sua senha">
             <a href="#" id="forgot-pass">Esqueceu a senha?</a>
             <input type="submit" value="Login" class="btn-login">
         </form>
