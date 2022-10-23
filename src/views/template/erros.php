@@ -1,11 +1,17 @@
 <?php
 
 $mensagem = [];
+$erros = [];
+
 if($exception) {
     $mensagem = [
         'type' => 'error',
         'message' => $exception->getMessage()
     ];
+
+    if(get_class($exception) === 'ValidaCamposException') {
+        $erros[] = $exception->getErros();
+    }
 }
 
 ?>

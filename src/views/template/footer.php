@@ -1,6 +1,6 @@
-<footer>
-
+<footer class="footer">
+    <p>Desenvolvimento de sistemas</p>
 </footer>
-<script src="/public/assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

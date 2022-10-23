@@ -3,6 +3,10 @@ carregaModel('Login');
 
 $exception = null;
 
+/**
+ * Controller de login, responsável pelo redirecionameto para a página home
+ * 
+ */
 if(count($_POST) > 0) {
 
     $login = new Login($_POST);
@@ -10,7 +14,7 @@ if(count($_POST) > 0) {
     try {
         
         $usuario = $login->checkarLogin();
-        echo "Apartamento $usuario->descricao logado com sucesso";
+        header("Location: home.php");
 
     } catch (FestahubException $e) {
 

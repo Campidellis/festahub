@@ -1,16 +1,16 @@
 <?php
 
+/**
+ *  Classe para validar compos dos formulários
+ */
 class ValidaCamposException extends FestahubException {
 
     private $erros = [];
-    /**
-     * 
-     * PAROU AQUI
-     */
-    public function __construct($mensagem = "Erros de validação", $code = 0, $previous = null) {
+    
+    public function __construct($erros = [], $mensagem = "Erros de validação", $code = 0, $previous = null) {
 
-        parent::__construct($mensagem, $code, $previous);
-        $this->erros;
+        parent::__construct($erros, $mensagem, $code, $previous);
+        $this->erros = $erros;
 
     }
 

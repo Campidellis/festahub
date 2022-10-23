@@ -12,6 +12,7 @@ define('MODEL_PATH', realpath(dirname(__FILE__) . '/../models'));
 define('VIEW_PATH', realpath(dirname(__FILE__) . '/../views'));
 define('CONTROLLER_PATH', realpath(dirname(__FILE__) . '/../controllers'));
 define('EXCEPTION_PATH', realpath(dirname(__FILE__) . '/../exceptions'));
+define('TEMPLATE_PATH', realpath(dirname(__FILE__) . '/../views/template'));
 
 // Arquivos
 require_once(realpath(dirname(__FILE__)) . '/database.php');
