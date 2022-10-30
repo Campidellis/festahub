@@ -12,5 +12,10 @@
 </head>
 <body>
     <header class="header">
-
+        <div class="logo">
+            <span>FESTAHUB</span>
+        </div>
+        <div class="menu-toggle mx-3">
+            <i class="icofont-navigation-menu"></i>
+        </div>
     </header>

@@ -1,5 +1,5 @@
 <footer class="footer">
-    <p>Desenvolvimento de sistemas</p>
+    <p>The Pika's Blindados BSI</p>
 </footer>
 <script src="assets/js/bootstrap.min.js"></script>
 </body>

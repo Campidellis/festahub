@@ -11,21 +11,75 @@ body {
     background-color: #ddd;
 }
 
+body.hide-sidebar {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";
+}
+
 header.header {
     grid-area: header;
-    background-color: blue;
+    display: flex;
+    background-color: #a45ee6;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 
+        0 2px 4px -1px rgba(0, 0, 0, .2),
+        0 4px 4px 0px rgba(0, 0, 0, .14),
+        0 1px 10px 0px rgba(0, 0, 0, .12);  
+}
+
+header.header .logo {
+    color: #fff; 
+    font-weight: bolder;
+    font-size: 25px;
+    padding-left: 3.5%; 
+}
+
+header.header .menu-toggle {
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
 }
 
 aside.sidebar {
     grid-area: sidebar;
-    background-color: aquamarine;
+    align-items: center;
+    background-color: #fff; 
+    box-shadow: -5px 0px 25px 1px rgba(0, 0, 0, 0.4);
+}
+
+aside.sidebar .menu li.nav-item a {
+    font-size: 1.2rem;
+    color: #555;
+    text-decoration: none;
+}
+
+aside.sidebar .menu ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside.sidebar .menu li.nav-item {
+    margin: 0;
+    padding: 10px 10px 10px 25px;
 }
 
 main.content {
     grid-area: content;
-    background-color: coral;
+    background-color: #eee;
 }
+
 footer.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 1.2rem;
     grid-area: footer;
-    background-color: darkgreen;
+    background-color: #222;
+    color: #FFF;
 }
