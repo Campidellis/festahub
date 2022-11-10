@@ -6,7 +6,7 @@ $uri = urldecode(
 );
 
 if($uri === '/' || $uri === '') {
-    $uri = '/login.php';
+    $uri = '/home.php';
 }
 
 include_once(CONTROLLER_PATH . "/{$uri}");

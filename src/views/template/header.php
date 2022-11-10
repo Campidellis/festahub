@@ -21,4 +21,7 @@
             <i class="icofont-navigation-menu"></i>
         </div>
         <div class="spacer"></div>
+        <div class="usuario">
+            <span>Olá, <?= $_SESSION['usuario']->nome?></span>
+        </div>
     </header>

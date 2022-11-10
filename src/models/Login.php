@@ -1,30 +1,7 @@
 <?php
 
-carregaModel('Apartamento');
-
 class Login extends Model {
-    
-    // public function validaCampos() {
-
-        /**
-         * Método responsável por validar os campos do form de login;
-         * 
-         */
-    //     $erros = [];
-
-    //     if(empty($this->apartamento)) {
-    //         $erros['apartamento'] = "Informe o apartamento";
-    //     }
-        
-    //     if(empty($this->senha)) {
-    //         $erros['senha'] = "Informe a senha";
-    //     }
-        
-    //     if(count($erros) > 0) {
-    //         throw new ValidaCamposException($erros);
-    //     }
-    // }   
-
+  
     /**
      * Método responsável por checkar se o usuário está logado ou não
      * @return Object $usuario

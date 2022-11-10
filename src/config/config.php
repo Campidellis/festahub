@@ -17,6 +17,8 @@ define('TEMPLATE_PATH', realpath(dirname(__FILE__) . '/../views/template'));
 // Arquivos
 require_once(realpath(dirname(__FILE__)) . '/database.php');
 require_once(realpath(dirname(__FILE__)) . '/loader.php');
+require_once(realpath(dirname(__FILE__)) . '/session.php');
 require_once(realpath(MODEL_PATH . '/Model.php'));
+require_once(realpath(MODEL_PATH . '/Apartamento.php'));
 require_once(realpath(EXCEPTION_PATH . '/Festahubexception.php'));
 require_once(realpath(EXCEPTION_PATH . '/validaCamposException.php'));

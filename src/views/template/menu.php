@@ -7,10 +7,11 @@
                     <span>Home</span>
                 </a>
             </li>
+            <?php if($_SESSION['usuario']->is_admin == 1){ ?>
             <li class="nav-item">
-                <a href="usuarios.php">
+                <a href="morador.php">
                 <i class="icofont-user-alt-7"></i>
-                    <span>Usuários</span>
+                    <span>Moradores</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -22,9 +23,10 @@
             <li class="nav-item">
                 <a href="reservas.php">
                 <i class="icofont-book-mark"></i>
-                    <span>Reservas</span>
+                    <span>Histórico de Reservas</span>
                 </a>
             </li>
+            <?php } ?>
             <li class="nav-item logout">
                 <a href="logout.php">
                 <i class="icofont-logout"></i>

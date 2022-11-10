@@ -1,6 +1,6 @@
 <?php
 carregaModel('Login');
-
+session_start();
 $exception = null;
 
 /**
@@ -14,6 +14,7 @@ if(count($_POST) > 0) {
     try {
         
         $usuario = $login->checkarLogin();
+        $_SESSION['usuario'] = $usuario;
         header("Location: home.php");
 
     } catch (FestahubException $e) {
